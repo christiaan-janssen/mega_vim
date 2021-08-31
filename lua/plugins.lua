@@ -23,6 +23,8 @@ return require("packer").startup(
         use {"tweekmonster/startuptime.vim"}
         use {"onsails/lspkind-nvim"}
 
+        use {"TimUntersberger/neogit"}
+
         use {
             'glepnir/galaxyline.nvim',
             branch = 'main',
