@@ -9,7 +9,7 @@ endif
 
 " Theme
 syntax enable
-colorscheme nord
+colorscheme tokyonight
 
 "let g:airline_theme='oceanicnext'
 

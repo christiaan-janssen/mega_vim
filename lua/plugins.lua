@@ -7,8 +7,6 @@ return require("packer").startup(
         use {"kyazdani42/nvim-web-devicons"}
         use {"kyazdani42/nvim-tree.lua"}
         use {"lewis6991/gitsigns.nvim"}
-        use {"glepnir/galaxyline.nvim"}
---        use {"akinsho/nvim-bufferline.lua"}
         use {"907th/vim-auto-save"}
         use {"nvim-treesitter/nvim-treesitter"}
         use {"chriskempson/base16-vim"}
@@ -16,9 +14,10 @@ return require("packer").startup(
         use {'Yggdroot/indentLine'}
         use {"ryanoasis/vim-devicons"}
         use {"sbdchd/neoformat"}
-        use { "neovim/nvim-lspconfig",
-	      "williamboman/nvim-lsp-installer",
-	}
+        use {
+            "neovim/nvim-lspconfig",
+            "williamboman/nvim-lsp-installer",
+        }
         use {"hrsh7th/nvim-compe"}
         use {"windwp/nvim-autopairs"}
         use {"alvan/vim-closetag"}
@@ -27,12 +26,15 @@ return require("packer").startup(
 
         use {"TimUntersberger/neogit"}
 
-        use {
-            'glepnir/galaxyline.nvim',
-            branch = 'main',
+        use({
+            "NTBBloodbath/galaxyline.nvim",
+            -- your statusline
+            config = function()
+                require("galaxyline.themes.eviline")
+            end,
             -- some optional icons
-            requires = {'kyazdani42/nvim-web-devicons', opt = true}
-        }
+            requires = { "kyazdani42/nvim-web-devicons", opt = true }
+        })
 
         use {
           'nvim-telescope/telescope.nvim',
@@ -45,7 +47,7 @@ return require("packer").startup(
 
         use {'arcticicestudio/nord-vim'}
         use {'mhartington/oceanic-next'}
-        --use {'vim-airline/vim-airline'}
+        use {'folke/tokyonight.nvim'}
 
         use {'preservim/nerdtree'}
         use {'preservim/tagbar'}
@@ -62,5 +64,15 @@ return require("packer").startup(
         use { 'clojure-vim/vim-jack-in' }
         use { 'radenling/vim-dispatch-neovim' }
         use { 'bhurlow/vim-parinfer' }
+
+        -- Fennel
+        use { 'Olical/aniseed' }
+
+        -- Testing
+        use { 'vim-test/vim-test' }
+        use { 'David-Kunz/jester' }
+
+        -- Ruby
+
     end
 )

@@ -26,6 +26,12 @@ else
     set expandtab
     let g:tagbar_position = 'topleft vertical'
 
+    " OCaml setup 
+    " TODO: Move into a file 
+    let g:opamshare = substitute(system('opam var share'),'\n$','','''')
+    execute "set rtp+=" . g:opamshare . "/merlin/vim"
+
+
     " Setup bracket matching
     inoremap ( ()<left>
     inoremap [ []<left>

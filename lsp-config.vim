@@ -19,4 +19,5 @@ lua require'lspconfig'.clangd.setup{}
 "lua require'lspconfig'.omnisharp.setup{}
 
 lua require'lspconfig'.clojure_lsp.setup{}
+lua require'lspconfig'.elmls.setup{}
 

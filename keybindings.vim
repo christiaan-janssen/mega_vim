@@ -1,3 +1,7 @@
+
+let g:mapleader = " "
+let g:maplocalleader = ','
+
 " code action
 nnoremap <silent><leader>,, <cmd>lua require('lspsaga.codeaction').code_action()<CR>
 vnoremap <silent><leader>,a <cmd>'<,'>lua require('lspsaga.codeaction').range_code_action()<CR>
@@ -22,8 +26,6 @@ nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
 nnoremap <silent> [e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>
 nnoremap <silent> ]e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>
 
-let g:mapleader = " "
-let g:maplocalleader = ','
 
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
@@ -51,11 +53,19 @@ nmap <F4> :NERDTreeToggle<CR>
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>bb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 nnoremap <leader>ww <C-W>w
 nnoremap <leader>wd <C-W>c
 nnoremap <leader>ws <C-W>s
 nnoremap <leader>wv <C-W>v
+
+" vim-test
+" these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+nmap <leader> tt :TestNearest<CR>
+nmap <leader> tf :TestFile<CR>
+nmap <leader> ts :TestSuite<CR>
+nmap <leader> tl :TestLast<CR>
+nmap <leader> tv :TestVisit<CR>
 
