@@ -16,7 +16,9 @@ return require("packer").startup(
         use {'Yggdroot/indentLine'}
         use {"ryanoasis/vim-devicons"}
         use {"sbdchd/neoformat"}
-        use {"neovim/nvim-lspconfig"}
+        use { "neovim/nvim-lspconfig",
+	      "williamboman/nvim-lsp-installer",
+	}
         use {"hrsh7th/nvim-compe"}
         use {"windwp/nvim-autopairs"}
         use {"alvan/vim-closetag"}
@@ -31,8 +33,6 @@ return require("packer").startup(
             -- some optional icons
             requires = {'kyazdani42/nvim-web-devicons', opt = true}
         }
-
-        use {"kabouzeid/nvim-lspinstall"}
 
         use {
           'nvim-telescope/telescope.nvim',
